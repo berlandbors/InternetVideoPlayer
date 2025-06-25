@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>🎬 Видео с Internet Archive</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🎬 Видео с Internet Archive</h1>
+    <p>Работает с API Archive.org</p>
+  <input type="text" id="genre" placeholder="Введите жанр или тему (например: italo disco)">
+  <button onclick="searchVideos()">🔍 Найти видео</button>
+  <div id="albums"></div>
+
+  <!-- Модальное окно -->
+  <div id="modal" class="modal" onclick="closeModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <h2 id="modal-title">Название видео</h2>
+      <video id="modal-player" controls style="width: 100%; max-height: 400px;"></video>
+      <a id="modal-download" class="download-link" target="_blank">⬇ Скачать</a><br>
+      <button class="nav-btn" onclick="prevVideo()">⏮ Предыдущее</button>
+      <button class="nav-btn" onclick="nextVideo()">⏭ Следующее</button>
+      <button class="nav-btn" onclick="shareVideo()">🔗 Поделиться</button>
+      <button class="close-btn" onclick="closeModal()">Закрыть</button>
+      <p id="share-status" style="margin-top: 10px; color: #4dd;"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
